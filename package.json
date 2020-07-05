@@ -26,7 +26,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "git:commit": "git add . && git-cz"
+    "git:commit": "git add . && git-cz",
+    "git:release": "standard-version"
   },
   "private": true,
   "dependencies": {},
@@ -39,6 +40,7 @@
     "dotenv": "6.2.0",
     "eslint": "6.8.0",
     "prettier": "2.0.4",
+    "standard-version": "^8.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
     "typescript": "~3.8.3"
