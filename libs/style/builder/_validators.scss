@@ -1,0 +1,183 @@
+@use "sass:map";
+@use "sass:meta";
+
+@use "../config";
+@use "schemes";
+
+@function validate($scheme, $element) {
+  $result: null;
+  $map: map.get($scheme, $element);
+
+  @if meta.type-of($map) != "map" {
+    $result: map.get(schemes.$light-scheme, $element);
+  } @else if meta.type-of($map) == "map" {
+    @if ($element == "colors") {
+      $result: validate-colors($map);
+    } @else if ($element == "shades") {
+      $result: validate-shades($map);
+    } @else if ($element == "typography") {
+      $result: validate-typography($map);
+    }
+  }
+
+  @return $result;
+}
+
+@function validate-colors($element) {
+  $result: ();
+
+  @each $color-key in config.$color-keys {
+    $map: map.get($element, $color-key);
+    $key: ();
+    $value: ();
+
+    @if meta.type-of($map) != "map" {
+      $result: map.merge(
+        $result,
+        (
+          #{$color-key}:
+            config.deep-get(schemes.$light-scheme, "colors", $color-key)
+        )
+      );
+    } @else if meta.type-of($map) == "map" {
+      $key: map.get($element, $color-key);
+      $query: ();
+
+      @if meta.type-of($key) == "map" {
+        @each $color-value in config.$color-values {
+          $value: map.get($key, $color-value);
+
+          @if null == $value {
+            $query: map.merge(
+              $query,
+              (
+                $color-value:
+                  config.deep-get(
+                    schemes.$light-scheme,
+                    "colors",
+                    $color-key,
+                    $color-value
+                  )
+              )
+            );
+          } @else {
+            $query: map.merge(
+              $query,
+              (
+                $color-value: $value
+              )
+            );
+          }
+        }
+      }
+
+      $result: map.merge(
+        $result,
+        (
+          $color-key: $query
+        )
+      );
+    }
+  }
+
+  @return $result;
+}
+
+@function validate-shades($element) {
+  $result: ();
+
+  @each $shade-key in config.$shade-keys {
+    $map: map.get($element, $shade-key);
+    $key: ();
+    $value: ();
+
+    @if meta.type-of($map) != "map" {
+      $result: map.merge(
+        $result,
+        (
+          #{$shade-key}:
+            config.deep-get(schemes.$light-scheme, "shades", $shade-key)
+        )
+      );
+    } @else if meta.type-of($map) == "map" {
+      @if $shade-key == "bg" {
+        $key: map.get($element, $shade-key);
+        $query: ();
+
+        @if meta.type-of($key) == "map" {
+          @each $shade-bg-value in config.$shade-bg-values {
+            $value: map.get($key, $shade-bg-value);
+
+            @if null == $value {
+              $query: map.merge(
+                $query,
+                (
+                  $shade-bg-value:
+                    config.deep-get(
+                      schemes.$light-scheme,
+                      "shades",
+                      $shade-key,
+                      $shade-bg-value
+                    )
+                )
+              );
+            } @else {
+              $query: map.merge(
+                $query,
+                (
+                  $shade-bg-value: $value
+                )
+              );
+            }
+          }
+        }
+
+        $result: map.merge(
+          $result,
+          (
+            $shade-key: $query
+          )
+        );
+      } @else if $shade-key == "fg" {
+        $key: map.get($element, $shade-key);
+        $query: ();
+
+        @if meta.type-of($key) == "map" {
+          @each $shade-fg-value in config.$shade-fg-values {
+            $value: map.get($key, $shade-fg-value);
+            @if null == $value {
+              $query: map.merge(
+                $query,
+                (
+                  $shade-fg-value:
+                    config.deep-get(
+                      schemes.$light-scheme,
+                      "shades",
+                      $shade-key,
+                      $shade-fg-value
+                    )
+                )
+              );
+            } @else {
+              $query: map.merge(
+                $query,
+                (
+                  $shade-fg-value: $value
+                )
+              );
+            }
+          }
+        }
+
+        $result: map.merge(
+          $result,
+          (
+            $shade-key: $query
+          )
+        );
+      }
+    }
+  }
+
+  @return $result;
+}

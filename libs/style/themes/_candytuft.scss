@@ -1,3 +1,11 @@
 @use "../qolb";
 
-@include qolb.build-theme();
+$custom-scheme: (
+  "colors": (
+    "accent": qolb.get-color(qolb.$green)
+  )
+);
+
+$custom-theme: qolb.light-scheme($custom-scheme);
+
+@include qolb.build-theme($custom-theme);

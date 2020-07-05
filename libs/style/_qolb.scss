@@ -6,4 +6,5 @@
 @use "builder";
 
 @mixin build-theme($theme: builder.light-scheme()) {
+  @include builder.build-css-properties($theme);
 }

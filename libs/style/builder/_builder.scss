@@ -6,12 +6,65 @@
 @use "validators";
 
 @function light-scheme($scheme: schemes.$light-scheme) {
+  $colors: null;
+  $shades: null;
   $result: null;
-  @debug $scheme;
+
+  @if meta.type-of($scheme) != "map" {
+    $colors: map.get(schemes.$light-scheme, "colors");
+    $shades: map.get(schemes.$light-scheme, "shades");
+  } @else if meta.type-of($scheme) == "map" {
+    @each $scheme-element in config.$scheme-elements {
+      @if meta.type-of(map.get($scheme, $scheme-element)) != "map" {
+        @if ($scheme-element == "colors") {
+          $colors: map.get(schemes.$light-scheme, "colors");
+        } @else if ($scheme-element == "shades") {
+          $shades: map.get(schemes.$light-scheme, "shades");
+        }
+      } @else if meta.type-of(map.get($scheme, $scheme-element)) == "map" {
+        @if ($scheme-element == "colors") {
+          $colors: validators.validate($scheme, "colors");
+        } @else if ($scheme-element == "shades") {
+          $shades: validators.validate($scheme, "shades");
+        }
+      }
+    }
+  }
+
+  $result: (
+    "colors": $colors,
+    "shades": $shades
+  );
+
   @return $result;
 }
 
 @function dark-scheme($scheme: schemes.$dark-scheme) {
   $result: null;
   @return $result;
+}
+
+//  Test Purpose only
+@mixin build-css-properties($theme) {
+  @each $name, $value in $theme {
+    @each $element in config.$scheme-elements {
+      @if $name == $element {
+        :root {
+          @each $element-name, $element-value in $value {
+            @if type-of($element-value) == "map" {
+              @each $element-value-name, $element-value-key in $element-value {
+                @if $element-value-key != null {
+                  @if $element-value-name == "default" {
+                    --#{$element-name}: #{$element-value-key};
+                  } @else {
+                    --#{$element-name}-#{$element-value-name}: #{$element-value-key};
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
