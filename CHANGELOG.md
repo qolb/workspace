@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/qolb/workspace/compare/v0.0.3...v0.0.4) (2020-07-05)
+
+
+### Features
+
+* **core:** add coerceElement function ([43869d8](https://github.com/qolb/workspace/commit/43869d8dd923d33a0c4a8b57e5f0d4cf363a8dfb))
+* **core:** add default breakpoints ([1c99af5](https://github.com/qolb/workspace/commit/1c99af5f05649abd64c3489bc55e2ec82455d2aa))
+* **core:** add focus-monitor ([a282e7e](https://github.com/qolb/workspace/commit/a282e7e2b05040a7502fff990af86f680aa63a30))
+* **core:** add media observer ([45aca66](https://github.com/qolb/workspace/commit/45aca6658b260c7bf3b97d38665d4d936f700df5))
+* **core:** add platform ([8c967b6](https://github.com/qolb/workspace/commit/8c967b61691fa5ad920be1d25d12642e85de6fb3))
+
 ### [0.0.3](https://github.com/qolb/workspace/compare/v0.0.2...v0.0.3) (2020-07-05)
 
 
