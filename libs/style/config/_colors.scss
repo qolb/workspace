@@ -1,3 +1,5 @@
+@use 'functions';
+
 //  [1] Red Palette
 $red: (
   "50": #fff5f5,
@@ -165,3 +167,29 @@ $orange: (
   "800": #e8590c,
   "900": #d9480f
 );
+
+//  [13] Default light scheme color palette configuration.
+$light-scheme-colors-config: (
+  "primary": functions.get-color($indigo),
+  "accent": functions.get-color($yellow),
+  "warn": functions.get-color($red)
+);
+
+//  [14] Default dark scheme color palette configuration.
+$dark-scheme-colors-config: (
+  "primary": functions.get-color($indigo),
+  "accent": functions.get-color($yellow),
+  "warn": functions.get-color($red)
+);
+
+@function light-scheme-colors($config: $light-scheme-colors-config) {
+  @if $config != null {
+    @return $config;
+  }
+}
+
+@function dark-scheme-colors($config: $dark-scheme-colors-config) {
+  @if $config != null {
+    @return $config;
+  }
+}

@@ -1,5 +1,7 @@
+@use "sass:color";
 @use "sass:map";
 @use "sass:math";
+@use "sass:string";
 
 //  [1] Fetch deeply nested values from a map.
 @function deep-get($map, $keys...) {
@@ -15,5 +17,30 @@
   @each $map in $maps {
     $result: map.merge($result, $map);
   }
+  @return $result;
+}
+
+//  [3] Return the default, lighter and darker colors from the color palette.
+@function get-color($color, $default: "500", $lighter: "200", $darker: "700") {
+  $result: null;
+
+  $result: (
+    "default": map.get($color, string.quote(#{$default})),
+    "lighter": map.get($color, string.quote(#{$lighter})),
+    "darker": map.get($color, string.quote(#{$darker}))
+  );
+
+  $h: color.hue(map.get($result, "default"));
+  $s: color.saturation(map.get($result, "default"));
+  $l: color.lightness(map.get($result, "default"));
+  $hsl: (math.round($h), math.round($s), math.round($l));
+
+  $result: map.merge(
+    $result,
+    (
+      "hsl": $hsl
+    )
+  );
+
   @return $result;
 }

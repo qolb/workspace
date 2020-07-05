@@ -5,12 +5,13 @@
 @use "schemes";
 @use "validators";
 
-@function light-scheme() {
+@function light-scheme($scheme: schemes.$light-scheme) {
   $result: null;
+  @debug $scheme;
   @return $result;
 }
 
-@function dark-scheme() {
+@function dark-scheme($scheme: schemes.$dark-scheme) {
   $result: null;
   @return $result;
 }

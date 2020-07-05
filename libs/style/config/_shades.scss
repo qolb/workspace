@@ -25,3 +25,39 @@ $black-54: color.adjust($black, $alpha: -0.46);
 $black-63: color.adjust($black, $alpha: -0.37);
 $black-72: color.adjust($black, $alpha: -0.28);
 $black-78: color.adjust($black, $alpha: -0.22);
+
+//  [3] Default light background shades map.
+$light-scheme-bg: ();
+
+//  [4] Default dark background shades map.
+$dark-scheme-bg: ();
+
+//  [5] Default light foreground shades map.
+$light-scheme-fg: ();
+
+//  [6] Default dark foreground shades map.
+$dark-scheme-fg: ();
+
+//  [7] Default light shades palette default configuration.
+$light-scheme-shades-config: (
+  "bg": $light-scheme-bg,
+  "fg": $light-scheme-fg
+);
+
+//  [8] Default dark shades palette default configuration.
+$dark-scheme-shades-config: (
+  "bg": $dark-scheme-bg,
+  "fg": $dark-scheme-fg
+);
+
+@function light-scheme-shades($config: $light-scheme-shades-config) {
+  @if $config != null {
+    @return $config;
+  }
+}
+
+@function dark-scheme-shades($config: $dark-scheme-shades-config) {
+  @if $config != null {
+    @return $config;
+  }
+}

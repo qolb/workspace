@@ -1,0 +1,13 @@
+@use "../config";
+
+//  [1] Light scheme.
+$light-scheme: (
+  "colors": config.light-scheme-colors(),
+  "shades": config.light-scheme-shades()
+);
+
+//  [2] Dark scheme.
+$dark-scheme: (
+  "colors": config.dark-scheme-colors(),
+  "shades": config.dark-scheme-shades()
+);
