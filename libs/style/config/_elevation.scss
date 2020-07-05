@@ -1,0 +1,189 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+
+@use "shades";
+
+@function elevation-color-umbra($color) {
+  @return color.adjust($color, $alpha: -0.82);
+}
+
+@function elevation-color-penumbra($color) {
+  @return color.adjust($color, $alpha: -0.85);
+}
+
+@function elevation-color-ambient($color) {
+  @return color.adjust($color, $alpha: -0.88);
+}
+
+@function elevation-config($color) {
+  $result: null;
+  $z1: (
+    "umbra": "0 2px 1px -1px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 1px 1px 0px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 1px 3px 0px #{elevation-color-ambient($color)}"
+  );
+  $z2: (
+    "umbra": "0px 3px 1px -2px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 2px 2px 0px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 1px 5px 0px #{elevation-color-ambient($color)}"
+  );
+  $z3: (
+    "umbra": "0px 3px 3px -2px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 3px 4px 0px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 1px 8px 0px #{elevation-color-ambient($color)}"
+  );
+  $z4: (
+    "umbra": "0px 2px 4px -1px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 4px 5px 0px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 1px 10px 0px #{elevation-color-ambient($color)}"
+  );
+  $z5: (
+    "umbra": "0px 3px 5px -1px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 5px 8px 0px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 1px 14px 0px #{elevation-color-ambient($color)}"
+  );
+  $z6: (
+    "umbra": "0px 3px 5px -1px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 6px 10px 0px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 1px 18px 0px #{elevation-color-ambient($color)}"
+  );
+  $z7: (
+    "umbra": "0px 4px 5px -2px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 7px 10px 1px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 2px 16px 1px #{elevation-color-ambient($color)}"
+  );
+  $z8: (
+    "umbra": "0px 5px 5px -3px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 8px 10px 1px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 3px 14px 2px #{elevation-color-ambient($color)}"
+  );
+  $z9: (
+    "umbra": "0px 5px 6px -3px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 9px 12px 1px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 3px 16px 2px #{elevation-color-ambient($color)}"
+  );
+  $z10: (
+    "umbra": "0px 6px 6px -3px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 10px 14px 1px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 4px 18px 3px #{elevation-color-ambient($color)}"
+  );
+  $z11: (
+    "umbra": "0px 6px 7px -4px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 11px 15px 1px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 4px 20px 3px #{elevation-color-ambient($color)}"
+  );
+  $z12: (
+    "umbra": "0px 7px 8px -4px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 12px 17px 2px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 5px 22px 4px #{elevation-color-ambient($color)}"
+  );
+  $z13: (
+    "umbra": "0px 7px 8px -4px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 13px 19px 2px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 5px 24px 4px #{elevation-color-ambient($color)}"
+  );
+  $z14: (
+    "umbra": "0px 7px 9px -4px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 14px 21px 2px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 5px 26px 4px #{elevation-color-ambient($color)}"
+  );
+  $z15: (
+    "umbra": "0px 8px 9px -5px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 15px 22px 2px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 6px 28px 5px #{elevation-color-ambient($color)}"
+  );
+  $z16: (
+    "umbra": "0px 8px 10px -5px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 16px 24px 2px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 6px 30px 5px #{elevation-color-ambient($color)}"
+  );
+  $z17: (
+    "umbra": "0px 8px 11px -5px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 17px 26px 2px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 6px 32px 5px #{elevation-color-ambient($color)}"
+  );
+  $z18: (
+    "umbra": "0px 9px 11px -5px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 18px 28px 2px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 7px 34px 6px #{elevation-color-ambient($color)}"
+  );
+  $z19: (
+    "umbra": "0px 9px 12px -6px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 19px 29px 2px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 7px 36px 6px #{elevation-color-ambient($color)}"
+  );
+  $z20: (
+    "umbra": "0px 10px 13px -6px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 20px 31px 3px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 8px 38px 7px #{elevation-color-ambient($color)}"
+  );
+  $z21: (
+    "umbra": "0px 10px 13px -6px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 21px 33px 3px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 8px 40px 7px #{elevation-color-ambient($color)}"
+  );
+  $z22: (
+    "umbra": "0px 10px 14px -6px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 22px 35px 3px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 8px 42px 7px #{elevation-color-ambient($color)}"
+  );
+  $z23: (
+    "umbra": "0px 11px 14px -7px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 23px 36px 3px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 9px 44px 8px #{elevation-color-ambient($color)}"
+  );
+  $z24: (
+    "umbra": "0px 11px 15px -7px #{elevation-color-umbra($color)}",
+    "penumbra": "0px 24px 38px 3px #{elevation-color-penumbra($color)}",
+    "ambient": "0px 9px 46px 8px #{elevation-color-ambient($color)}"
+  );
+
+  $result: (
+    "z1": $z1,
+    "z2": $z2,
+    "z3": $z3,
+    "z4": $z4,
+    "z5": $z5,
+    "z6": $z6,
+    "z7": $z7,
+    "z8": $z8,
+    "z9": $z9,
+    "z10": $z10,
+    "z11": $z11,
+    "z12": $z12,
+    "z13": $z13,
+    "z14": $z14,
+    "z15": $z15,
+    "z16": $z16,
+    "z17": $z17,
+    "z18": $z18,
+    "z19": $z19,
+    "z20": $z20,
+    "z21": $z21,
+    "z22": $z22,
+    "z23": $z23,
+    "z24": $z24
+  );
+
+  @return $result;
+}
+
+@function elevation($elevation, $color: shades.$black) {
+  $config: elevation-config($color);
+
+  $result: null;
+  @each $key, $value in $config {
+    @if $key == $elevation {
+      @if type-of($value) == "map" {
+        @each $config_key, $config_value in $value {
+          $result: list.append($result, $config_value, comma);
+        }
+      } @else {
+        $result: $value;
+      }
+    }
+  }
+
+  @return $result;
+}
