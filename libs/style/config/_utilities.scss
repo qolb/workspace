@@ -1,0 +1,11 @@
+//  [1] Scheme elements map.
+$scheme-elements: ("colors", "shades");
+
+//  [2] Elements keys map.
+$color-keys: ("primary", "accent", "warn");
+$shade-keys: ("bg", "fg");
+
+//  [3] Key values map.
+$color-values: ("default", "lighter", "darker");
+$shade-bg-values: ();
+$shade-fg-values: ();
