@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "sass:math";
+
+//  [1] Fetch deeply nested values from a map.
+@function deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map.get($map, $key);
+  }
+  @return $map;
+}
+
+//  [2] Join multiple maps.
+@function join($maps...) {
+  $result: ();
+  @each $map in $maps {
+    $result: map.merge($result, $map);
+  }
+  @return $result;
+}
