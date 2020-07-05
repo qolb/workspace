@@ -1,8 +1,13 @@
 {
   "cSpell.words": [
+    "Buildable",
     "cacheable",
+    "codelyzer",
     "copyfiles",
+    "devkit",
     "esnext",
+    "forin",
+    "ngcc",
     "nrwl",
     "qolb"
   ]
