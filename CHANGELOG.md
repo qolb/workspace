@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/qolb/workspace/compare/v0.0.2...v0.0.3) (2020-07-05)
+
+
+### Styling
+
+* add elevation function ([ccc393a](https://github.com/qolb/workspace/commit/ccc393abb7a464db15546c7635d776e470ea7ab4))
+* add shades body and text values ([f14284b](https://github.com/qolb/workspace/commit/f14284b1174f5a6a06f30bfb2fb180c0c04b9f6b))
+* add typography functions and validators ([69d5875](https://github.com/qolb/workspace/commit/69d587559a3c30b917e2d13e5b01bca318057538))
+* create style folder structure ([61abfed](https://github.com/qolb/workspace/commit/61abfed849a7eab7085e903a51ec23da2eaa72c0))
+* rename default theme ([2ef2e10](https://github.com/qolb/workspace/commit/2ef2e10711ebddfde24b5e3e89b6ddc50d9c4cbf))
+* **builder:** add basic functionality and validators ([74ab2b9](https://github.com/qolb/workspace/commit/74ab2b9f97bb41906c60fe03c282efa0eb40ce83))
+* **builder:** add light and dark scheme functions ([1f3bf0b](https://github.com/qolb/workspace/commit/1f3bf0bf28354dfdc6ca78306443050743a093eb))
+* **builder:** add theme builder required files ([86e3628](https://github.com/qolb/workspace/commit/86e3628d53b2cdc89ed22a445955429f9fd190a7))
+* **config:** add colors and shades functions ([bbb71de](https://github.com/qolb/workspace/commit/bbb71dec19dd9e6d5b510678d77b0bfec8ed538c))
+* **config:** add colors palette ([5be4739](https://github.com/qolb/workspace/commit/5be47392cbe852a68a6e2acb7e96ec3e4dba520b))
+* **config:** add functions file ([f782446](https://github.com/qolb/workspace/commit/f78244655eca4f60084a73843c40bc7c0fed256f))
+* **config:** add theme shades ([c60c10d](https://github.com/qolb/workspace/commit/c60c10dba262c384abf9ada5b1dcb9517f59c8ae))
+* **config:** add utilities ([6bce492](https://github.com/qolb/workspace/commit/6bce492ae661a6c5086b7c9d3f10fbc921823cda))
+
 ### [0.0.2](https://github.com/qolb/workspace/compare/v0.0.1...v0.0.2) (2020-07-05)
 
 
