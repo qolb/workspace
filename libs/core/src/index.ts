@@ -1,1 +1,1 @@
-export * from './lib/core.module';
+export { Platform } from './lib/platform/platform';
