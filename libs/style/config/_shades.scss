@@ -1,0 +1,27 @@
+@use "sass:color";
+
+//  [1] White
+$white: #ffffff;
+$white-6: color.adjust($white, $alpha: -0.94);
+$white-12: color.adjust($white, $alpha: -0.88);
+$white-21: color.adjust($white, $alpha: -0.79);
+$white-27: color.adjust($white, $alpha: -0.73);
+$white-36: color.adjust($white, $alpha: -0.57);
+$white-45: color.adjust($white, $alpha: -0.55);
+$white-54: color.adjust($white, $alpha: -0.46);
+$white-63: color.adjust($white, $alpha: -0.37);
+$white-72: color.adjust($white, $alpha: -0.28);
+$white-78: color.adjust($white, $alpha: -0.22);
+
+//  [2] Black
+$black: #000000;
+$black-6: color.adjust($black, $alpha: -0.94);
+$black-12: color.adjust($black, $alpha: -0.88);
+$black-21: color.adjust($black, $alpha: -0.79);
+$black-27: color.adjust($black, $alpha: -0.73);
+$black-36: color.adjust($black, $alpha: -0.57);
+$black-45: color.adjust($black, $alpha: -0.55);
+$black-54: color.adjust($black, $alpha: -0.46);
+$black-63: color.adjust($black, $alpha: -0.37);
+$black-72: color.adjust($black, $alpha: -0.28);
+$black-78: color.adjust($black, $alpha: -0.22);
