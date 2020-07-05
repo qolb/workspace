@@ -24,6 +24,9 @@
   "projects": {
     "demo": {
       "tags": []
+    },
+    "core": {
+      "tags": []
     }
   }
 }

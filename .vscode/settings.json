@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
-    "Buildable",
+    "buildable",
+    "codegen",
     "cacheable",
     "codelyzer",
     "copyfiles",
@@ -9,6 +10,9 @@
     "forin",
     "ngcc",
     "nrwl",
-    "qolb"
+    "packagr",
+    "prebuild",
+    "qolb",
+    "tslib"
   ]
 }
