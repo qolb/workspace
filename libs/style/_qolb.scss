@@ -4,3 +4,6 @@
 @forward "config";
 
 @use "builder";
+
+@mixin build-theme($theme: builder.light-scheme()) {
+}

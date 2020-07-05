@@ -4,3 +4,13 @@
 @use "../config";
 @use "schemes";
 @use "validators";
+
+@function light-scheme() {
+  $result: null;
+  @return $result;
+}
+
+@function dark-scheme() {
+  $result: null;
+  @return $result;
+}
