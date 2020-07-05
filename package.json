@@ -33,6 +33,7 @@
   "dependencies": {},
   "devDependencies": {
     "@angular/cli": "9.1.0",
+    "@nrwl/angular": "^9.5.1",
     "@nrwl/workspace": "9.5.1",
     "@types/node": "~8.9.4",
     "commitizen": "^4.1.2",
