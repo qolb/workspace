@@ -1,0 +1,68 @@
+@use "../config";
+
+@mixin generic($theme) {
+  @include generic-properties($theme);
+  @include generic-common();
+  @include generic-html();
+  @include generic-body();
+}
+
+@mixin generic-properties($theme) {
+  body {
+    --body-bg-color: #{config.get-bg($theme, "body")};
+    --body-fg-color: #{config.get-fg($theme, "text")};
+    --body-font-sans: #{config.get-typography($theme, "font", "sans")};
+    --body-text-size: #{config.get-typography($theme, "body", "text-size")};
+    --body-font-weight: #{config.get-typography($theme, "body", "font-weight")};
+    --body-leading: #{config.get-typography($theme, "body", "leading")};
+    --body-tracking: #{config.get-typography($theme, "body", "tracking")};
+  }
+}
+
+@mixin generic-common() {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  *:not(html) {
+    &,
+    &:before,
+    &:after {
+      box-sizing: inherit;
+    }
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin generic-html() {
+  html {
+    font-size: 62.5%;
+    text-rendering: optimizeLegibility;
+    text-size-adjust: 100%;
+    word-break: break-word;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@mixin generic-body() {
+  body {
+    background-color: var(--body-bg-color);
+    color: var(--body-fg-color);
+    font-family: var(--body-font-sans);
+    font-size: var(--body-text-size);
+    font-weight: var(--body-font-weight);
+    line-height: var(--body-leading);
+    letter-spacing: var(--body-tracking);
+  }
+}

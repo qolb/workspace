@@ -44,3 +44,27 @@
 
   @return $result;
 }
+
+// Return background
+@function get-bg($theme, $bg) {
+  @if $bg != null {
+    $result: deep-get($theme, "shades", "bg", $bg);
+    @return $result;
+  }
+}
+
+// Return foreground
+@function get-fg($theme, $fg) {
+  @if $fg != null {
+    $result: deep-get($theme, "shades", "fg", $fg);
+    @return $result;
+  }
+}
+
+// Return typography
+@function get-typography($theme, $element, $v) {
+  @if $element != null {
+    $result: deep-get($theme, "typography", $element, $v);
+    @return $result;
+  }
+}

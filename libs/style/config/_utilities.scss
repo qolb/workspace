@@ -21,8 +21,8 @@ $typography-keys: (
 
 //  [3] Key values map.
 $color-values: ("default", "lighter", "darker");
-$shade-bg-values: ();
-$shade-fg-values: ();
+$shade-bg-values: ("body");
+$shade-fg-values: ("text");
 $typography-fonts: ("sans");
 $typography-values: (
   "font-family",

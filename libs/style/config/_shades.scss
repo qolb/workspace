@@ -27,13 +27,17 @@ $black-72: color.adjust($black, $alpha: -0.28);
 $black-78: color.adjust($black, $alpha: -0.22);
 
 //  [3] Default light background shades map.
-$light-scheme-bg: ();
+$light-scheme-bg: (
+  "body": $black-6
+);
 
 //  [4] Default dark background shades map.
 $dark-scheme-bg: ();
 
 //  [5] Default light foreground shades map.
-$light-scheme-fg: ();
+$light-scheme-fg: (
+  "text": $black-63
+);
 
 //  [6] Default dark foreground shades map.
 $dark-scheme-fg: ();

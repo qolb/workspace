@@ -4,7 +4,9 @@
 @forward "config";
 
 @use "builder";
+@use "base";
 
 @mixin build-theme($theme: builder.light-scheme()) {
-  @include builder.build-css-properties($theme);
+  @include base.generic($theme);
+  // @include builder.build-css-properties($theme);
 }
