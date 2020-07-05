@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/qolb/workspace/compare/v0.0.1...v0.0.2) (2020-07-05)
+
+
+### Build System
+
+* add @angular/cdk ([569eb47](https://github.com/qolb/workspace/commit/569eb4744e985d9d17997cbda001b6e5650a6ea3))
+* add @nrwl/angular ([a6bd7ad](https://github.com/qolb/workspace/commit/a6bd7addc11b834594e05541e079fdeb7bc10046))
+* add core library ([83c14ab](https://github.com/qolb/workspace/commit/83c14ab87acf74a740dc3998e79ba6a28a1d699f))
+* add demo app ([9c239cb](https://github.com/qolb/workspace/commit/9c239cbd8d1a25410e15e88bdf20b21e4485c40e))
+
 ### 0.0.1 (2020-07-05)
 
 
