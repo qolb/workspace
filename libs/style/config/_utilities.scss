@@ -1,11 +1,33 @@
 //  [1] Scheme elements map.
-$scheme-elements: ("colors", "shades");
+$scheme-elements: ("colors", "shades", "typography");
 
 //  [2] Elements keys map.
 $color-keys: ("primary", "accent", "warn");
 $shade-keys: ("bg", "fg");
+$typography-keys: (
+  "font",
+  "display-4",
+  "display-3",
+  "display-2",
+  "display-1",
+  "headline",
+  "title",
+  "subtitle",
+  "body",
+  "button",
+  "caption",
+  "overline"
+);
 
 //  [3] Key values map.
 $color-values: ("default", "lighter", "darker");
 $shade-bg-values: ();
 $shade-fg-values: ();
+$typography-fonts: ("sans");
+$typography-values: (
+  "font-family",
+  "text-size",
+  "leading",
+  "tracking",
+  "font-weight"
+);

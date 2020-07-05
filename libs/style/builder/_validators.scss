@@ -181,3 +181,105 @@
 
   @return $result;
 }
+
+@function validate-typography($scheme) {
+  $result: ();
+
+  @each $typography-key in config.$typography-keys {
+    $map: map.get($scheme, $typography-key);
+    $key: ();
+    $value: ();
+
+    @if null == $map or meta.type-of($map) != "map" {
+      $result: map.merge(
+        $result,
+        (
+          #{$typography-key}:
+            config.deep-get(
+              schemes.$light-scheme,
+              "typography",
+              $typography-key
+            )
+        )
+      );
+    } @else if meta.type-of($map) == "map" {
+      @if $typography-key == "font" {
+        $key: map.get($scheme, $typography-key);
+        $query: ();
+
+        @if meta.type-of($key) == "map" {
+          @each $typography-font in config.$typography-fonts {
+            $value: map.get($key, $typography-font);
+            @if null == $value {
+              $query: map.merge(
+                $query,
+                (
+                  $typography-font:
+                    config.deep-get(
+                      schemes.$light-scheme,
+                      "typography",
+                      $typography-key,
+                      $typography-font
+                    )
+                )
+              );
+            } @else {
+              $query: map.merge(
+                $query,
+                (
+                  $typography-font: $value
+                )
+              );
+            }
+          }
+        }
+
+        $result: map.merge(
+          $result,
+          (
+            $typography-key: $query
+          )
+        );
+      } @else {
+        $key: map.get($scheme, $typography-key);
+        $query: ();
+
+        @if meta.type-of($key) == "map" {
+          @each $typography-value in config.$typography-values {
+            $value: map.get($key, $typography-value);
+            @if null == $value {
+              $query: map.merge(
+                $query,
+                (
+                  $typography-value:
+                    config.deep-get(
+                      schemes.$light-scheme,
+                      "typography",
+                      $typography-key,
+                      $typography-value
+                    )
+                )
+              );
+            } @else {
+              $query: map.merge(
+                $query,
+                (
+                  $typography-value: $value
+                )
+              );
+            }
+          }
+        }
+
+        $result: map.merge(
+          $result,
+          (
+            $typography-key: $query
+          )
+        );
+      }
+    }
+  }
+
+  @return $result;
+}

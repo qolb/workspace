@@ -8,11 +8,13 @@
 @function light-scheme($scheme: schemes.$light-scheme) {
   $colors: null;
   $shades: null;
+  $typography: null;
   $result: null;
 
   @if meta.type-of($scheme) != "map" {
     $colors: map.get(schemes.$light-scheme, "colors");
     $shades: map.get(schemes.$light-scheme, "shades");
+    $typography: map.get(schemes.$light-scheme, "typography");
   } @else if meta.type-of($scheme) == "map" {
     @each $scheme-element in config.$scheme-elements {
       @if meta.type-of(map.get($scheme, $scheme-element)) != "map" {
@@ -20,12 +22,16 @@
           $colors: map.get(schemes.$light-scheme, "colors");
         } @else if ($scheme-element == "shades") {
           $shades: map.get(schemes.$light-scheme, "shades");
+        } @else if ($scheme-element == "typography") {
+          $typography: map.get(schemes.$light-scheme, "typography");
         }
       } @else if meta.type-of(map.get($scheme, $scheme-element)) == "map" {
         @if ($scheme-element == "colors") {
           $colors: validators.validate($scheme, "colors");
         } @else if ($scheme-element == "shades") {
           $shades: validators.validate($scheme, "shades");
+        } @else if ($scheme-element == "typography") {
+          $typography: validators.validate($scheme, "typography");
         }
       }
     }
@@ -33,7 +39,8 @@
 
   $result: (
     "colors": $colors,
-    "shades": $shades
+    "shades": $shades,
+    "typography": $typography
   );
 
   @return $result;

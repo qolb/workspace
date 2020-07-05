@@ -3,11 +3,13 @@
 //  [1] Light scheme.
 $light-scheme: (
   "colors": config.light-scheme-colors(),
-  "shades": config.light-scheme-shades()
+  "shades": config.light-scheme-shades(),
+  "typography": config.typography()
 );
 
 //  [2] Dark scheme.
 $dark-scheme: (
   "colors": config.dark-scheme-colors(),
-  "shades": config.dark-scheme-shades()
+  "shades": config.dark-scheme-shades(),
+  "typography": config.typography()
 );

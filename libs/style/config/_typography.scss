@@ -1,0 +1,129 @@
+// [1]  Variables
+$font-family-sans: unquote("Roboto, sans-serif");
+
+// [2]  Fonts
+$font: (
+  "sans": $font-family-sans
+);
+
+// [3]  Display 4
+$display-4: (
+  "font-family": null,
+  "text-size": 3.6rem,
+  "leading": 5rem,
+  "tracking": 0.03em,
+  "font-weight": 500
+);
+
+// [4]  Display 3
+$display-3: (
+  "font-family": null,
+  "text-size": 3rem,
+  "leading": 4.6rem,
+  "tracking": 0.03em,
+  "font-weight": 500
+);
+
+// [5]  Display 2
+$display-2: (
+  "font-family": null,
+  "text-size": 2.6rem,
+  "leading": 4rem,
+  "tracking": 0.03em,
+  "font-weight": 500
+);
+
+// [6]  Display 1
+$display-1: (
+  "font-family": null,
+  "text-size": 2.2rem,
+  "leading": 3.2rem,
+  "tracking": 0.03em,
+  "font-weight": 500
+);
+
+// [7]  Headline
+$headline: (
+  "font-family": null,
+  "text-size": 2rem,
+  "leading": 3rem,
+  "tracking": 0.03em,
+  "font-weight": 500
+);
+
+// [8]  Title
+$title: (
+  "font-family": null,
+  "text-size": 1.8rem,
+  "leading": 2.8rem,
+  "tracking": 0.03em,
+  "font-weight": 500
+);
+
+// [9]  Subtitle
+$subtitle: (
+  "font-family": null,
+  "text-size": 1.6rem,
+  "leading": 2.4rem,
+  "tracking": 0.03em,
+  "font-weight": 400
+);
+
+// [10]  Body
+$body: (
+  "font-family": null,
+  "text-size": 1.4rem,
+  "leading": 2rem,
+  "tracking": 0.03em,
+  "font-weight": 400
+);
+
+// [11]  Button
+$button: (
+  "font-family": null,
+  "text-size": 1.2rem,
+  "leading": 2rem,
+  "tracking": 0.06em,
+  "font-weight": 500
+);
+
+// [12]  Caption
+$caption: (
+  "font-family": null,
+  "text-size": 1.2rem,
+  "leading": 2rem,
+  "tracking": 0.03em,
+  "font-weight": 400
+);
+
+// [13]  Overline
+$overline: (
+  "font-family": null,
+  "text-size": 1rem,
+  "leading": 2rem,
+  "tracking": 0.06em,
+  "font-weight": 500
+);
+
+// [14]  Typography config
+$typography-config: (
+  "font": $font,
+  "display-4": $display-4,
+  "display-3": $display-3,
+  "display-2": $display-2,
+  "display-1": $display-1,
+  "headline": $headline,
+  "title": $title,
+  "subtitle": $subtitle,
+  "body": $body,
+  "button": $button,
+  "caption": $caption,
+  "overline": $overline
+);
+
+// [15]  Typography function
+@function typography($config: $typography-config) {
+  @if $config != null {
+    @return $config;
+  }
+}
